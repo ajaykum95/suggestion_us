@@ -1,0 +1,111 @@
+/*General*/
+body {
+    color: #1b1d1f;
+    font-family: "Open Sans",sans-serif;
+    font-size: 13px;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+*{	
+	box-sizing:border-box;
+	outline:none;
+}
+img{
+	max-width:100%;
+}
+.container {
+    max-width: 1200px;
+    width: 100%;
+}
+p {
+    line-height: 24px;
+    margin-left: 16px;
+    margin-right: 7px;
+}
+.main-content{padding:59px;}
+.centerform{margin: 0 auto;float: none;}
+.content{background: #eef2f5;
+    padding: 16px;}
+
+.box-width1 {width:1%;}
+.box-width2 {width:2%;}
+.box-width3 {width:3%;}
+.box-width4 {width:4%;}
+.box-width5 {width:5%;}
+.box-width6 {width:6%;}
+.box-width7 {width:7%;}
+.box-width8 {width:8%;}    
+.box-width9 {width:9%;}
+.box-width10 {width:10%;}
+.box-width16 {width:16%;}
+.box-width61 {width:61%;}
+
+.box-intro-bg {
+    background: #eee none repeat scroll 0 0;
+    margin: 10px 0 0px;
+    padding: 0px 0 0px;
+    text-align: center;
+}
+.box-intro-border {
+    border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.news-border{border-right:1px solid #ccc;}
+
+.menuDv { background:#fff;
+	box-shadow: 0px 0px 2px 0px #999;
+    border-radius: 2px;
+}
+.user-email{ padding: 15px 0px 15px;}
+.sub-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+}
+.panel {
+    text-align: center;
+	background: #e4e6e3;
+    border-bottom: 1px solid #d2d2d2;
+    text-transform: capitalize;
+    font-size: 16px;
+}
+.wrap{
+	overflow:hidden;
+}
+.box-intro-background {
+    margin: 0px;
+    padding: 0px 0 0px;
+    text-align: center;
+}
+.link-style12{
+	border-bottom:1px solid #ccc;
+}
+
+.box-intro-background p {
+    margin: 0px;
+	padding:3px 0;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    height: 37px;
+    line-height: 17px;
+}
+.box-intro-background a {
+    padding: 0 6px;
+	color: #13747d;
+	font-size: 14px;
+    /* font-weight: 550; */
+    text-decoration: none;
+}
+.box-intro-background a:first-child {
+    padding-left: 0px;
+}
+.box-intro-background a:last-child {
+    border-right: none;
+    padding-right: 0px;
+}
+.box-intro-background a:hover {
+	color: #f87c0a;
+}

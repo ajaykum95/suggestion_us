@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="model.Feedback" table="feedback_master">
+        <id name="fid"/>
+        <property name="fname"/>
+        <property name="fmobile"/>
+        <property name="feedback"/>
+        <property name="fstatus"/>
+        <property name="faddedon"/>
+    </class>
+    <class name="model.Admin" table="admin_master">
+        <id name="id"/>
+        <property name="userid"/>
+        <property name="password"/>        
+    </class>
+</hibernate-mapping>

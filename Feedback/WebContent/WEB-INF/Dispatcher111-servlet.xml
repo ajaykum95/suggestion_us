@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:mvc="http://www.springframework.org/schema/mvc"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<!-- configuration to enable annotation based validation -->
+	<mvc:annotation-driven/>
+        <tx:annotation-driven/>
+	<!-- configuration of controller and validators package -->
+	
+	<context:component-scan base-package="controller"/>
+	<!-- tiles configuration -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+            <property name="prefix" value="/"></property>	
+            <property name="suffix" value=".jsp" />
+	</bean>
+	
+        <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	<property name="url" value="jdbc:mysql://localhost:3306/feedback"/>
+	<property name="username" value="feedback"></property>
+	<property name="password" value="12345"></property>
+        
+	</bean>
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+	<property name="dataSource" ref="dataSource"/>
+	<property name="mappingResources">
+		<list>
+			<value>Feedback.hbm.xml</value>
+		</list>
+	</property>
+	<property name="hibernateProperties">
+		<props>
+			<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+			<prop key="show_sql">true</prop>
+                </props>
+                
+	</property>
+        
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+	<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
+	<property name="sessionFactory" ref="sessionFactory"/>
+	<property name="checkWriteOperations" value="false"/>
+	</bean>
+	
+	<bean id="dao" class="daos.DaoImpl">
+	<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+
+</beans>
+
+	
